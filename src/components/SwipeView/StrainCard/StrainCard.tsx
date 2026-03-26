@@ -122,7 +122,7 @@ const StrainCard = forwardRef<StrainCardRef, Props>(function StrainCard(
         NOPE
       </animated.div>
 
-      <StrainArt emoji={strain.artEmoji} colors={strain.artColors} name={strain.name} />
+      <StrainArt emoji={strain.artEmoji} colors={strain.artColors} name={strain.name} imageUrl={strain.imageUrl} />
 
       <div className={styles.body}>
         <div className={styles.header}>
