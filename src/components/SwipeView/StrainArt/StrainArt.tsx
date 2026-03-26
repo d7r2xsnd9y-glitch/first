@@ -31,8 +31,8 @@ export default function StrainArt({ emoji, colors, name, imageUrl }: Props) {
         <circle cx="30"  cy="40"  r="25" fill="rgba(255,255,255,0.05)" />
       </svg>
 
-      {/* Real strain photo from Leafly CDN */}
-      {!imgFailed && (
+      {/* Real strain photo from Leafly CDN — only attempt if URL is non-empty */}
+      {imageUrl && !imgFailed && (
         <img
           src={imageUrl}
           alt={name}

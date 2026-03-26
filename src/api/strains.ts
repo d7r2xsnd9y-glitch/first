@@ -1,5 +1,8 @@
 import type { Strain } from '../types/strain'
 import { getGradient, getArtEmoji } from '../utils/colors'
+import imageMap from '../data/strain-images.json'
+
+const IMAGE_MAP = imageMap as Record<string, string | null>
 
 interface CannaStrain {
   id: number
@@ -40,7 +43,7 @@ export async function fetchAllStrains(): Promise<Strain[]> {
         artEmoji: getArtEmoji(name, type),
         artColors: getGradient(name, type),
         thcRange: type === 'indica' ? '18–25%' : type === 'sativa' ? '20–28%' : '15–28%',
-        imageUrl: `https://images.leafly.com/flower-images/${slug}.png`,
+        imageUrl: IMAGE_MAP[name] ?? '',
         buyUrl: `https://www.dopestgenetics.com/search?q=${encodeURIComponent(name)}`,
         leaflyUrl: `https://www.leafly.com/strains/${slug}`,
       }
