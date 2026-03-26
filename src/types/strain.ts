@@ -9,15 +9,7 @@ export interface Strain {
   artEmoji: string
   artColors: [string, string]
   thcRange: string
+  imageUrl: string   // Leafly CDN image, may 404 for obscure strains
   buyUrl: string
   leaflyUrl: string
-}
-
-// Raw shape from the-cannabis-api.vercel.app
-export interface APIStrain {
-  strainid: number
-  name: string
-  type: string
-  effects: string
-  flavours: string
 }

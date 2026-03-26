@@ -40,6 +40,7 @@ export async function fetchAllStrains(): Promise<Strain[]> {
         artEmoji: getArtEmoji(name, type),
         artColors: getGradient(name, type),
         thcRange: type === 'indica' ? '18–25%' : type === 'sativa' ? '20–28%' : '15–28%',
+        imageUrl: `https://images.leafly.com/flower-images/${slug}.png`,
         buyUrl: `https://www.dopestgenetics.com/search?q=${encodeURIComponent(name)}`,
         leaflyUrl: `https://www.leafly.com/strains/${slug}`,
       }
